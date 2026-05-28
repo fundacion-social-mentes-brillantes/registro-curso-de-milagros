@@ -30,6 +30,24 @@ export function formatLongDate(date = new Date()) {
   }).format(date);
 }
 
+export function formatReadableDate(dateKey) {
+  if (!dateKey) {
+    return "Sin actividad";
+  }
+
+  const [year, month, day] = dateKey.split("-").map(Number);
+
+  if (!year || !month || !day) {
+    return "Sin actividad";
+  }
+
+  return new Intl.DateTimeFormat("es-CO", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(new Date(year, month - 1, day));
+}
+
 export function normalizeText(value) {
   return value
     .normalize("NFD")

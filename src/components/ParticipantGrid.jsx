@@ -5,9 +5,11 @@ function ParticipantGrid({
   participants,
   searchTerm,
   onSearchChange,
-  isParticipantCompleted,
-  onToggleParticipant,
+  onMarkLesson,
+  onRemoveLastLesson,
   disabled,
+  savingParticipantId,
+  todayKey,
 }) {
   return (
     <section className="space-y-5" aria-labelledby="participants-title">
@@ -17,7 +19,7 @@ function ParticipantGrid({
             Participantes
           </p>
           <h2 id="participants-title" className="text-2xl font-semibold text-slate-950">
-            Registro individual
+            Avance individual
           </h2>
         </div>
 
@@ -42,10 +44,12 @@ function ParticipantGrid({
           {participants.map((participant) => (
             <ParticipantCard
               key={participant.id}
-              name={participant.name}
-              isCompleted={isParticipantCompleted(participant.id)}
-              onToggle={() => onToggleParticipant(participant)}
+              participant={participant}
+              onMarkLesson={onMarkLesson}
+              onRemoveLastLesson={onRemoveLastLesson}
               disabled={disabled}
+              savingParticipantId={savingParticipantId}
+              todayKey={todayKey}
             />
           ))}
         </div>
