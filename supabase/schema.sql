@@ -1,4 +1,4 @@
--- Registro Curso de Milagros
+﻿-- Registro Curso de Milagros
 -- Ejecuta este archivo en Supabase SQL Editor.
 
 create extension if not exists pgcrypto;
@@ -98,12 +98,12 @@ values
   ('Alexandra Ortega', 2, true),
   ('Andrea Cicuania', 3, true),
   ('Blanca Cecilia Reyes', 4, true),
-  ('Damaris González', 5, true),
-  ('Edison López', 6, true),
+  ('Damaris GonzÃ¡lez', 5, true),
+  ('Edison LÃ³pez', 6, true),
   ('Edna Baquero', 7, true),
   ('Edwin Ortega', 8, true),
   ('Gloria fernandez', 9, true),
-  ('Isabela Albarado', 10, true),
+  ('Isabel Rodriguez', 10, true),
   ('Jacqueline Ruiz', 11, true),
   ('Jessica Becerra', 12, true),
   ('Johana Ortega', 13, true),
@@ -111,19 +111,19 @@ values
   ('Leidy Franco', 15, true),
   ('Luis Ortega', 16, true),
   ('Luz Patricia marin', 17, true),
-  ('Marcela Sánchez', 18, true),
+  ('Marcela SÃ¡nchez', 18, true),
   ('Maria Salamanca', 19, true),
   ('Martha Fabiola Rojas', 20, true),
   ('Menchis', 21, true),
-  ('Míriam Sabogal', 22, true),
+  ('MÃ­riam Sabogal', 22, true),
   ('Olga Yanent Cardenas', 23, true),
   ('Rosario Merry', 24, true),
   ('Saby', 25, true),
   ('Sandra Cuadrado', 26, true),
   ('Sebastian Lopez', 27, true),
-  ('Tatiana López', 28, true),
-  ('Valeria López', 29, true),
-  ('Yised González', 30, true)
+  ('Tatiana LÃ³pez', 28, true),
+  ('Valeria LÃ³pez', 29, true),
+  ('Yised GonzÃ¡lez', 30, true)
 on conflict (name) do update
 set
   display_order = excluded.display_order,
@@ -157,3 +157,4 @@ begin
     end if;
   end if;
 end $$;
+

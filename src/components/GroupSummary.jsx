@@ -1,4 +1,4 @@
-import {
+﻿import {
   BarChart3,
   CircleCheckBig,
   CircleDashed,
@@ -29,7 +29,7 @@ function MetricCard({ icon: Icon, label, value, helper, tone = "slate" }) {
 
 function getStatusClass(status) {
   const classes = {
-    "Al día": "bg-emerald-100 text-emerald-800",
+    "Al dÃ­a": "bg-emerald-100 text-emerald-800",
     Pendiente: "bg-amber-100 text-amber-800",
     "Sin iniciar": "bg-slate-200 text-slate-700",
     Completado: "bg-sky-100 text-sky-800",
@@ -89,7 +89,7 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
           />
           <MetricCard
             icon={CircleCheckBig}
-            label="Al día"
+            label="Al dÃ­a"
             value={summary.onTrackCount}
             helper="Van con el calendario"
             tone="emerald"
@@ -98,20 +98,20 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
             icon={CircleDashed}
             label="Atrasadas"
             value={summary.behindCount}
-            helper="Continúan desde su siguiente lección"
+            helper="ContinÃºan desde su siguiente lecciÃ³n"
             tone="amber"
           />
           <MetricCard
             icon={PauseCircle}
             label="Sin iniciar"
             value={summary.notStartedCount}
-            helper="Todavía en lección 1"
+            helper="TodavÃ­a en lecciÃ³n 1"
           />
           <MetricCard
             icon={Gauge}
-            label="Lección promedio"
+            label="LecciÃ³n promedio"
             value={summary.averageCurrentLesson}
-            helper="Va en esta lección"
+            helper="Va en esta lecciÃ³n"
             tone="sky"
           />
           <MetricCard
@@ -126,7 +126,7 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
       <div className="grid gap-4 lg:grid-cols-2">
         <article className="rounded-lg border border-slate-200 bg-white p-4">
           <h3 className="text-lg font-semibold text-slate-950">
-            Personas en cada lección
+            Personas en cada lecciÃ³n
           </h3>
           <div className="mt-4 space-y-3">
             {lessonDistribution.length > 0 ? (
@@ -154,7 +154,7 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
                 );
               })
             ) : (
-              <p className="text-sm text-slate-600">Aún no hay datos de avance.</p>
+              <p className="text-sm text-slate-600">AÃºn no hay datos de avance.</p>
             )}
           </div>
         </article>
@@ -171,7 +171,7 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
               >
                 <span className="font-semibold text-slate-950">{participant.name}</span>
                 <span>Va en {participant.nextLessonLabel}</span>
-                <span>Completó hasta {participant.completedUntil}</span>
+                <span>CompletÃ³ hasta {participant.completedUntil}</span>
                 <span
                   className={`w-fit rounded-full px-2.5 py-1 text-xs font-semibold ${getStatusClass(
                     participant.status,
@@ -190,3 +190,4 @@ function GroupSummary({ summary, lessonDistribution, participants }) {
 }
 
 export default GroupSummary;
+

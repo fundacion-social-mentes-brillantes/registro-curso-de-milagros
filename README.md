@@ -1,14 +1,14 @@
-# Registro Curso de Milagros
+﻿# Registro Curso de Milagros
 
-Aplicación web minimalista para registrar el avance diario de un grupo que hace Un Curso de Milagros. No usa login: cualquier persona con el enlace puede buscar un nombre y marcar o quitar el chulo de la lección del día.
+AplicaciÃ³n web minimalista para registrar el avance diario de un grupo que hace Un Curso de Milagros. No usa login: cualquier persona con el enlace puede buscar un nombre y marcar o quitar el chulo de la lecciÃ³n del dÃ­a.
 
 La fecha base del curso es:
 
-- 26 de mayo de 2026 = Lección 1
-- 27 de mayo de 2026 = Lección 2
-- 28 de mayo de 2026 = Lección 3
+- 26 de mayo de 2026 = LecciÃ³n 1
+- 27 de mayo de 2026 = LecciÃ³n 2
+- 28 de mayo de 2026 = LecciÃ³n 3
 
-## Tecnologías
+## TecnologÃ­as
 
 - React
 - Vite
@@ -34,7 +34,7 @@ Luego abre la URL que muestre Vite, normalmente:
 http://localhost:5173
 ```
 
-Si todavía no configuraste Supabase, la app funciona en modo local usando el navegador. Los cambios no se comparten con el grupo hasta conectar Supabase.
+Si todavÃ­a no configuraste Supabase, la app funciona en modo local usando el navegador. Los cambios no se comparten con el grupo hasta conectar Supabase.
 
 ## Configurar Supabase
 
@@ -45,7 +45,7 @@ registro-curso-de-milagros
 https://twgeeiqtrtytvjnmhfks.supabase.co
 ```
 
-La app solo necesita una key pública para frontend. No uses la `service_role` key en esta app.
+La app solo necesita una key pÃºblica para frontend. No uses la `service_role` key en esta app.
 
 Para encontrar la key:
 
@@ -58,14 +58,14 @@ Para encontrar la key:
 
 ## Variables de entorno locales
 
-Crea un archivo `.env.local` en la raíz del proyecto:
+Crea un archivo `.env.local` en la raÃ­z del proyecto:
 
 ```bash
 VITE_SUPABASE_URL=https://twgeeiqtrtytvjnmhfks.supabase.co
 VITE_SUPABASE_ANON_KEY=pega_aqui_la_publishable_o_anon_key
 ```
 
-`.env.local` está ignorado por Git y no debe subirse a GitHub.
+`.env.local` estÃ¡ ignorado por Git y no debe subirse a GitHub.
 
 ## Crear las tablas en Supabase
 
@@ -73,7 +73,7 @@ VITE_SUPABASE_ANON_KEY=pega_aqui_la_publishable_o_anon_key
 2. Ve a **SQL Editor**.
 3. Crea una consulta nueva.
 4. Copia todo el contenido de `supabase/schema.sql`.
-5. Pégalo en el editor.
+5. PÃ©galo en el editor.
 6. Haz clic en **Run**.
 
 El SQL crea:
@@ -81,9 +81,9 @@ El SQL crea:
 - `participants`
 - `lesson_checks`
 - Participantes iniciales
-- Restricción única por participante y lección
+- RestricciÃ³n Ãºnica por participante y lecciÃ³n
 - RLS activo
-- Políticas públicas simples para leer, insertar y actualizar
+- PolÃ­ticas pÃºblicas simples para leer, insertar y actualizar
 - Permisos `GRANT` para que `supabase-js` pueda acceder desde el frontend
 
 ## Subir a GitHub
@@ -101,7 +101,7 @@ git push -u origin main
 
 1. Entra a [Vercel](https://vercel.com/).
 2. Importa el repositorio desde GitHub.
-3. Vercel detectará Vite automáticamente.
+3. Vercel detectarÃ¡ Vite automÃ¡ticamente.
 4. Usa estos valores:
 
 ```text
@@ -118,7 +118,7 @@ VITE_SUPABASE_URL=https://twgeeiqtrtytvjnmhfks.supabase.co
 VITE_SUPABASE_ANON_KEY=pega_aqui_la_publishable_o_anon_key
 ```
 
-Después de agregarlas, vuelve a desplegar el proyecto.
+DespuÃ©s de agregarlas, vuelve a desplegar el proyecto.
 
 ## Estructura de datos
 
@@ -140,3 +140,4 @@ Después de agregarlas, vuelve a desplegar el proyecto.
 - `updated_at`
 
 La app no borra registros. Cuando alguien marca o desmarca, hace un `upsert` sobre `participant_id` + `lesson_number` y cambia `completed` a `true` o `false`.
+

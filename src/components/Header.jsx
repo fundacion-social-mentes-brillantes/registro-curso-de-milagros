@@ -1,8 +1,8 @@
-import { CalendarDays, CheckCircle2, Sparkles } from "lucide-react";
+﻿import { CalendarDays, CheckCircle2, Sparkles } from "lucide-react";
 
 function Header({ formattedDate, lessonNumber }) {
   const lessonLabel =
-    lessonNumber > 0 ? `Lección ${lessonNumber}` : "El curso inicia pronto";
+    lessonNumber > 0 ? `LecciÃ³n ${lessonNumber}` : "El curso inicia pronto";
 
   return (
     <header className="space-y-6">
@@ -35,7 +35,7 @@ function Header({ formattedDate, lessonNumber }) {
 
           <div className="rounded-lg bg-amber-50 px-4 py-4">
             <span className="text-sm font-medium text-amber-800">
-              Lección sugerida por calendario
+              LecciÃ³n sugerida por calendario
             </span>
             <p className="text-2xl font-semibold text-slate-950">{lessonLabel}</p>
           </div>
@@ -45,7 +45,7 @@ function Header({ formattedDate, lessonNumber }) {
               Inicio del curso
             </span>
             <p className="text-base font-semibold text-slate-950">
-              26 de mayo de 2026 = Lección 1
+              26 de mayo de 2026 = LecciÃ³n 1
             </p>
           </div>
         </div>
@@ -55,3 +55,4 @@ function Header({ formattedDate, lessonNumber }) {
 }
 
 export default Header;
+

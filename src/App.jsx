@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState } from "react";
 import { BarChart3, CalendarDays, History, UsersRound } from "lucide-react";
 import Header from "./components/Header.jsx";
 import GroupSummary from "./components/GroupSummary.jsx";
@@ -94,7 +94,7 @@ function buildParticipantProgress(participant, checks, suggestedLessonNumber) {
   } else if (completedChecks.length === 0) {
     status = "Sin iniciar";
   } else if (completedUntil >= suggestedLessonNumber) {
-    status = "Al día";
+    status = "Al dÃ­a";
   }
 
   return {
@@ -109,7 +109,7 @@ function buildParticipantProgress(participant, checks, suggestedLessonNumber) {
       ? formatReadableDate(lastActivityCheck.lesson_date)
       : "Sin actividad",
     nextLesson,
-    nextLessonLabel: isCourseCompleted ? "curso completado" : `lección ${nextLesson}`,
+    nextLessonLabel: isCourseCompleted ? "curso completado" : `lecciÃ³n ${nextLesson}`,
     status,
     isCourseCompleted,
   };
@@ -272,7 +272,7 @@ function App() {
     return {
       totalParticipants,
       onTrackCount: participantProgress.filter(
-        (participant) => participant.status === "Al día" || participant.status === "Completado",
+        (participant) => participant.status === "Al dÃ­a" || participant.status === "Completado",
       ).length,
       behindCount: participantProgress.filter((participant) => participant.status === "Pendiente")
         .length,
@@ -342,7 +342,7 @@ function App() {
       const lesson = participant.isCourseCompleted ? TOTAL_LESSONS : participant.nextLesson;
       const label = participant.isCourseCompleted
         ? "Curso completado"
-        : `Lección ${participant.nextLesson}`;
+        : `LecciÃ³n ${participant.nextLesson}`;
 
       if (!items[lesson]) {
         items[lesson] = { lesson, label, count: 0 };
@@ -408,7 +408,7 @@ function App() {
 
     if (error) {
       console.error("No se pudo guardar el registro.", error);
-      setStatusMessage("No se pudo guardar el cambio. Inténtalo de nuevo.");
+      setStatusMessage("No se pudo guardar el cambio. IntÃ©ntalo de nuevo.");
     } else if (data) {
       updateLocalCheck(
         data.participant_id,
@@ -453,8 +453,8 @@ function App() {
       .single();
 
     if (error) {
-      console.error("No se pudo quitar la última lección.", error);
-      setStatusMessage("No se pudo quitar la última lección. Inténtalo de nuevo.");
+      console.error("No se pudo quitar la Ãºltima lecciÃ³n.", error);
+      setStatusMessage("No se pudo quitar la Ãºltima lecciÃ³n. IntÃ©ntalo de nuevo.");
     } else if (data) {
       updateLocalCheck(
         data.participant_id,
@@ -509,9 +509,9 @@ function App() {
 
     return (
       <>
-        <section className="grid gap-3 sm:grid-cols-3" aria-label="Resumen rápido">
+        <section className="grid gap-3 sm:grid-cols-3" aria-label="Resumen rÃ¡pido">
           <article className="rounded-lg border border-emerald-100 bg-emerald-50 p-4">
-            <p className="text-sm font-medium text-emerald-800">Al día</p>
+            <p className="text-sm font-medium text-emerald-800">Al dÃ­a</p>
             <p className="mt-2 text-3xl font-semibold text-slate-950">
               {summary.onTrackCount}
             </p>
@@ -585,3 +585,4 @@ function App() {
 }
 
 export default App;
+

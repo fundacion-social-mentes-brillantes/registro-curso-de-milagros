@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock3 } from "lucide-react";
+﻿import { CheckCircle2, Clock3 } from "lucide-react";
 
 function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumber, actions }) {
   if (lessonNumbers.length === 0 && actions.length === 0) {
@@ -12,7 +12,7 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
           Historial
         </p>
         <h2 id="recent-history-title" className="text-2xl font-semibold text-slate-950">
-          Lecciones y últimas acciones
+          Lecciones y Ãºltimas acciones
         </h2>
       </div>
 
@@ -33,7 +33,7 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <h3 className="font-semibold text-slate-950">
-                      Lección {lessonNumber}
+                      LecciÃ³n {lessonNumber}
                     </h3>
                     <p className="text-sm text-slate-600">
                       {completed} de {total} personas
@@ -60,7 +60,7 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
         <article className="rounded-lg border border-slate-200 bg-white p-4">
           <div className="flex items-center gap-2">
             <Clock3 className="h-5 w-5 text-slate-500" aria-hidden="true" />
-            <h3 className="text-lg font-semibold text-slate-950">Últimas acciones</h3>
+            <h3 className="text-lg font-semibold text-slate-950">Ãšltimas acciones</h3>
           </div>
           <div className="mt-4 space-y-3">
             {actions.length > 0 ? (
@@ -69,7 +69,7 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
                   <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-600" />
                   <div>
                     <p className="text-sm font-medium text-slate-950">
-                      {action.participantName} marcó Lección {action.lessonNumber}
+                      {action.participantName} marcÃ³ LecciÃ³n {action.lessonNumber}
                     </p>
                     <p className="text-sm text-slate-600">{action.dateLabel}</p>
                   </div>
@@ -77,7 +77,7 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
               ))
             ) : (
               <p className="text-sm text-slate-600">
-                Todavía no hay acciones registradas.
+                TodavÃ­a no hay acciones registradas.
               </p>
             )}
           </div>
@@ -88,3 +88,4 @@ function RecentHistory({ lessonNumbers, countsByLesson, total, currentLessonNumb
 }
 
 export default RecentHistory;
+

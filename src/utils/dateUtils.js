@@ -1,4 +1,4 @@
-export const COURSE_START_DATE = new Date(2026, 4, 26);
+﻿export const COURSE_START_DATE = new Date(2026, 4, 26);
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
 export function startOfLocalDay(date) {
@@ -74,3 +74,4 @@ export function getRecentLessonNumbers(currentLessonNumber, amount = 7) {
     (_, index) => firstLesson + index,
   );
 }
+

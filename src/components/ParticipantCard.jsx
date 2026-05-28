@@ -1,4 +1,4 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import {
   CalendarClock,
   CheckCircle2,
@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 function statusClasses(status) {
-  if (status === "Al día") {
+  if (status === "Al dÃ­a") {
     return "bg-emerald-100 text-emerald-800";
   }
 
@@ -57,7 +57,7 @@ function ParticipantCard({
             >
               {participant.status === "Completado" ? (
                 <Trophy className="h-4 w-4" aria-hidden="true" />
-              ) : participant.status === "Al día" ? (
+              ) : participant.status === "Al dÃ­a" ? (
                 <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
               ) : (
                 <CircleDashed className="h-4 w-4" aria-hidden="true" />
@@ -78,17 +78,17 @@ function ParticipantCard({
             <p className="mt-1 text-xl font-semibold text-slate-950">
               {participant.isCourseCompleted
                 ? "Curso completado"
-                : `Lección ${participant.nextLesson}`}
+                : `LecciÃ³n ${participant.nextLesson}`}
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div className="rounded-lg bg-slate-50 p-3">
               <span className="block text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
-                Completó hasta
+                CompletÃ³ hasta
               </span>
               <p className="mt-1 text-lg font-semibold text-slate-950">
-                Lección {participant.completedUntil}
+                LecciÃ³n {participant.completedUntil}
               </p>
             </div>
             <div className="rounded-lg bg-slate-50 p-3">
@@ -103,7 +103,7 @@ function ParticipantCard({
 
           <div className="flex items-center gap-2 rounded-lg bg-slate-50 p-3">
             <CalendarClock className="h-4 w-4 text-slate-500" aria-hidden="true" />
-            <span>Última actividad: {participant.lastActivityLabel}</span>
+            <span>Ãšltima actividad: {participant.lastActivityLabel}</span>
           </div>
         </div>
       </div>
@@ -117,7 +117,7 @@ function ParticipantCard({
         >
           <CheckCircle2 className="h-5 w-5" aria-hidden="true" />
           {canMark
-            ? `Marcar lección ${participant.nextLesson} hecha`
+            ? `Marcar lecciÃ³n ${participant.nextLesson} hecha`
             : "Curso completado"}
         </button>
 
@@ -140,17 +140,17 @@ function ParticipantCard({
             className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60"
           >
             <RotateCcw className="h-4 w-4" aria-hidden="true" />
-            Quitar última
+            Quitar Ãºltima
           </button>
         </div>
 
         {isDatePanelOpen && (
           <div className="rounded-lg border border-emerald-100 bg-emerald-50 p-3">
             <p className="text-sm font-semibold text-emerald-900">
-              Registrar lección {participant.nextLesson}
+              Registrar lecciÃ³n {participant.nextLesson}
             </p>
             <label className="mt-3 block text-sm font-medium text-slate-700">
-              Fecha de realización
+              Fecha de realizaciÃ³n
               <input
                 type="date"
                 value={selectedDate}
@@ -164,7 +164,7 @@ function ParticipantCard({
               disabled={disabled || isSaving || !selectedDate}
               className="mt-3 min-h-11 w-full rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Guardar lección hecha
+              Guardar lecciÃ³n hecha
             </button>
           </div>
         )}
@@ -174,3 +174,4 @@ function ParticipantCard({
 }
 
 export default ParticipantCard;
+

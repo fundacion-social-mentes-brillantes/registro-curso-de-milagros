@@ -1,4 +1,4 @@
-import { Search } from "lucide-react";
+﻿import { Search } from "lucide-react";
 import ParticipantCard from "./ParticipantCard.jsx";
 
 function ParticipantGrid({
@@ -63,3 +63,4 @@ function ParticipantGrid({
 }
 
 export default ParticipantGrid;
+
