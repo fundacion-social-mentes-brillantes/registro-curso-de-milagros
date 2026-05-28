@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+.env.local
+.playwright-cli
+vite.stdout.log
+vite.stderr.log
+.DS_Store
